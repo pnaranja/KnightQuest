@@ -12,6 +12,8 @@ import java.io.PrintStream;
 @Configuration
 @ComponentScan(basePackages = "com.springinaction.knightquest2")
 public class KnightConfig {
+
+    // Inject stream for SlayDragonQuest
     @Bean
     PrintStream stream() {
         return System.out;
