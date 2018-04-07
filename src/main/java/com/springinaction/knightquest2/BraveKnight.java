@@ -12,6 +12,7 @@ public class BraveKnight implements Knight {
     @Autowired
     Quest quest;
 
+    @Override
     public String embarkQuest() {
         return quest.embark();
     }

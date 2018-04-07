@@ -11,15 +11,22 @@ import java.io.PrintStream;
  */
 @Component
 public class SlayDragonQuest implements Quest {
+
+    @Autowired
+    PrintStream systemOut;
+
     PrintStream stream;
 
     @Autowired
-    public SlayDragonQuest(PrintStream stream) {
-        this.stream = stream;
+    SlayDragonQuest(PrintStream aStream){
+        this.stream = aStream;
     }
 
     @Override
     public String embark() {
-        String msg = "Embarking on a quest to slay the dragon"; stream.println(msg); return msg;
+        String msg = "Embarking on a quest to slay the dragon";
+        stream.println(msg);
+        systemOut.println(msg);
+        return msg;
     }
 }
