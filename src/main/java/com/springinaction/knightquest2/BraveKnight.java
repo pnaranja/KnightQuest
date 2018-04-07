@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class BraveKnight implements Knight {
 
-    @Autowired
     Quest quest;
+
+    @Autowired
+    BraveKnight(Quest quest){
+        this.quest = quest;
+    }
 
     @Override
     public String embarkQuest() {
