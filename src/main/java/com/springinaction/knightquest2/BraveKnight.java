@@ -1,6 +1,7 @@
 package com.springinaction.knightquest2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,7 +14,7 @@ public class BraveKnight implements Knight {
     String knightName;
 
     @Autowired
-    BraveKnight(Quest quest, String knightName){
+    BraveKnight(Quest quest, @Value("${knight.name}") String knightName){
         this.quest = quest;
         this.knightName = knightName;
     }
