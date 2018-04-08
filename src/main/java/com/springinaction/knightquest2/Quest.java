@@ -5,6 +5,5 @@ package com.springinaction.knightquest2;
  */
 public interface Quest {
 
-    String embark();
-
+    Quest embark();
 }

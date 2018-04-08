@@ -10,14 +10,17 @@ import org.springframework.stereotype.Component;
 public class BraveKnight implements Knight {
 
     Quest quest;
+    String knightName;
 
     @Autowired
-    BraveKnight(Quest quest){
+    BraveKnight(Quest quest, String knightName){
         this.quest = quest;
+        this.knightName = knightName;
     }
 
     @Override
-    public String embarkQuest() {
+    public Quest embarkQuest() {
+        System.out.print("Knight " + knightName + ": ");
         return quest.embark();
     }
 }

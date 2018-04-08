@@ -1,6 +1,7 @@
 package com.springinaction.knightquest2;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.AssertionsKt;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -12,12 +13,13 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 public class KnightTest {
 
     @Autowired
-    private Knight braveKnight;
+    private BraveKnight braveKnight;
 
 
     @Test
     public void theTest() {
-        Assertions.assertEquals(braveKnight.embarkQuest(), "Embarking on a quest to slay the dragon");
+        SlayDragonQuest quest = (SlayDragonQuest) braveKnight.embarkQuest();
+        Assertions.assertTrue(quest.slayDragon());
     }
 
 }

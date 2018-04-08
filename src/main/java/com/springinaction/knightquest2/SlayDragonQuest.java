@@ -23,10 +23,14 @@ public class SlayDragonQuest implements Quest {
     }
 
     @Override
-    public String embark() {
-        String msg = "Embarking on a quest to slay the dragon";
-        stream.println(msg);
-        systemOut.println(msg);
-        return msg;
+    public SlayDragonQuest embark() {
+        stream.println("Embarking on a quest to slay the dragon");
+        systemOut.println("And save the princess!!");
+        return this;
+    }
+
+    public boolean slayDragon(){
+        systemOut.println("\nSlayed the dragon!");
+        return true;
     }
 }
